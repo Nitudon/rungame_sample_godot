@@ -1,0 +1,2 @@
+# rungame_sample_godot
+Godot製3Dランゲームのプロジェクト
