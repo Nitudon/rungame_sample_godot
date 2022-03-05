@@ -1,0 +1,16 @@
+[entry]
+
+OSX.64="res://plugins/librungame_sample_rust.dylib"
+OSX.32="res://plugins/librungame_sample_rust.dylib"
+
+[dependencies]
+
+OSX.64=[  ]
+OSX.32=[  ]
+
+[general]
+
+singleton=false
+load_once=true
+symbol_prefix="godot_"
+reloadable=true

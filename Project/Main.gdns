@@ -1,0 +1,8 @@
+[gd_resource type="NativeScript" load_steps=2 format=2]
+
+[ext_resource path="res://plugins/gdnativelibrary.gdnlib" type="GDNativeLibrary" id=1]
+
+[resource]
+resource_name = "Rule"
+class_name = "Rule"
+library = ExtResource( 1 )

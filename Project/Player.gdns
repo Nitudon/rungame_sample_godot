@@ -1,0 +1,11 @@
+[gd_resource type="NativeScript" load_steps=2 format=2]
+
+[sub_resource type="GDNativeLibrary" id=1]
+entry/OSX.64 = "res://plugins/librungame_sample_rust.dylib"
+entry/OSX.32 = "res://plugins/librungame_sample_rust.dylib"
+dependency/OSX.64 = [  ]
+dependency/OSX.32 = [  ]
+
+[resource]
+class_name = "Player"
+library = SubResource( 1 )

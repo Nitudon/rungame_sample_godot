@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Player.gdns" type="Script" id=1]
+[ext_resource path="res://Main.gdns" type="Script" id=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="BoxShape" id=5]
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="BoxShape" id=10]
+
+[sub_resource type="CubeMesh" id=11]
+
+[sub_resource type="Skin" id=9]
+
+[node name="Rule" type="Node"]
+script = ExtResource( 2 )
+
+[node name="World" type="Spatial" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="World"]
+transform = Transform( 1, 0, 0, 0, 0.486991, 0.873407, 0, -0.873407, 0.486991, 0, 4.205, 0 )
+
+[node name="Ground" type="StaticBody" parent="World"]
+transform = Transform( 2, 0, 0, 0, 0.05, 0, 0, 0, 20, 0, 0, 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="World/Ground"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="World/Ground"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="GoalArea" type="Area" parent="World"]
+transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 38.2781 )
+
+[node name="CollisionShape" type="CollisionShape" parent="World/GoalArea"]
+shape = SubResource( 5 )
+
+[node name="Wall" type="StaticBody" parent="World"]
+transform = Transform( 0.1, 0, 0, 0, 20, 0, 0, 0, 120, -2, 0, 20 )
+
+[node name="CollisionShape" type="CollisionShape" parent="World/Wall"]
+shape = SubResource( 6 )
+
+[node name="Player" type="KinematicBody" parent="World"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00651556, 0.4936, -0.000159025 )
+script = ExtResource( 1 )
+fall_acceleration = 20.0
+jump_power = 5.0
+
+[node name="Camera" type="Camera" parent="World/Player"]
+transform = Transform( -1.66667, -9.90227e-08, 2.21735e-07, 0, 1.52181, 0.679613, -1.45705e-07, 0.407768, -0.913086, 0, 1.7, -2.49569 )
+current = true
+
+[node name="CollisionShape" type="CollisionShape" parent="World/Player"]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.8, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="MeshInstance" type="MeshInstance" parent="World/Player"]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.8, 0, 0, 0 )
+mesh = SubResource( 11 )
+skin = SubResource( 9 )
+material/0 = null
+
+[node name="Wall2" type="StaticBody" parent="World"]
+transform = Transform( 0.1, 0, 0, 0, 20, 1.81195e-05, 0, -3.01992e-06, 120, 2, 0, 20 )
+
+[node name="CollisionShape" type="CollisionShape" parent="World/Wall2"]
+shape = SubResource( 6 )
+
+[node name="StartTimer" type="Timer" parent="."]
+
+[node name="GameTimer" type="Timer" parent="."]
