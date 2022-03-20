@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area",
+"class": "AccelerationField",
+"language": "NativeScript",
+"path": "res://AcclerationArea.gdns"
+}, {
+"base": "Area",
+"class": "GoalField",
+"language": "NativeScript",
+"path": "res://GoalArea.gdns"
+}, {
+"base": "Node",
+"class": "Rule",
+"language": "NativeScript",
+"path": "res://Main.gdns"
+} ]
+_global_script_class_icons={
+"AccelerationField": "",
+"GoalField": "",
+"Rule": ""
+}
+
 [application]
 
 config/name="rungame_sample"

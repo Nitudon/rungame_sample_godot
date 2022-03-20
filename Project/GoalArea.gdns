@@ -3,6 +3,7 @@
 [ext_resource path="res://plugins/gdnativelibrary.gdnlib" type="GDNativeLibrary" id=1]
 
 [resource]
-class_name = "Rule"
+resource_name = "GoalArea"
+class_name = "GoalField"
 library = ExtResource( 1 )
-script_class_name = "Rule"
+script_class_name = "GoalField"
