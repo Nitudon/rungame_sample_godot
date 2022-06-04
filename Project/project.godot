@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "Rule",
 "language": "NativeScript",
 "path": "res://Main.gdns"
+}, {
+"base": "Control",
+"class": "Screen",
+"language": "NativeScript",
+"path": "res://Screen.gdns"
 } ]
 _global_script_class_icons={
 "AccelerationField": "",
 "GoalField": "",
-"Rule": ""
+"Rule": "",
+"Screen": ""
 }
 
 [application]

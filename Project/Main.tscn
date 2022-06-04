@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player.gdns" type="Script" id=1]
 [ext_resource path="res://Main.gdns" type="Script" id=2]
 [ext_resource path="res://GoalArea.gdns" type="Script" id=3]
 [ext_resource path="res://AcclerationArea.gdns" type="Script" id=4]
+[ext_resource path="res://Fonts/Rota-Medium.otf" type="DynamicFontData" id=6]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -18,6 +19,21 @@
 [sub_resource type="CubeMesh" id=6]
 
 [sub_resource type="Skin" id=7]
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://Fonts/Rota-Medium.otf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 60
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 90
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
 
 [node name="Root" type="Node"]
 script = ExtResource( 2 )
@@ -48,27 +64,32 @@ shape = SubResource( 3 )
 transform = Transform( 0.1, 0, 0, 0, 20, 0, 0, 0, 5000, -2, 0, 20 )
 
 [node name="CollisionShape" type="CollisionShape" parent="World/Wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="Player" type="KinematicBody" parent="World"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00651556, 0.4936, -0.000159025 )
+[node name="Player" type="RigidBody" parent="World"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007, 1, 0 )
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource( 1 )
-jump_power = 10.0
-horizontal_speed = 5.0
+horizontal_speed = 4.0
 move_acceleration = 4.0
+jump_power = 10.0
 fall_acceleration = 19.0
-max_forward_speed = 10.0
+max_forward_speed = 25.5
 
 [node name="Camera" type="Camera" parent="World/Player"]
 transform = Transform( -1.66667, -9.90227e-08, 2.21735e-07, 0, 1.52181, 0.679613, -1.45705e-07, 0.407768, -0.913086, 0, 1.7, -2.49569 )
 current = true
 
 [node name="CollisionShape" type="CollisionShape" parent="World/Player"]
-transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.8, 0, 0, 0 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.64, 0 )
 shape = SubResource( 5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="World/Player"]
-transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.8, 0, 0, 0 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.64, 0 )
 mesh = SubResource( 6 )
 skin = SubResource( 7 )
 material/0 = null
@@ -82,7 +103,7 @@ shape = SubResource( 4 )
 [node name="AcclerationArea" type="Area" parent="World"]
 transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.3158 )
 script = ExtResource( 4 )
-acceleration = 12.0
+acceleration = 3.0
 
 [node name="CollisionShape" type="CollisionShape" parent="World/AcclerationArea"]
 shape = SubResource( 3 )
@@ -90,5 +111,80 @@ shape = SubResource( 3 )
 [node name="StartTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="GameTimer" type="Timer" parent="."]
-one_shot = true
+[node name="Screen" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartScreen" type="Control" parent="Screen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Countdown" type="Label" parent="Screen/StartScreen"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -29.5
+margin_bottom = 29.5
+custom_fonts/font = SubResource( 9 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameScreen" type="Control" parent="Screen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="Screen/GameScreen"]
+anchor_right = 4.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 332.0
+margin_bottom = 92.0
+custom_fonts/font = SubResource( 9 )
+text = "Time : 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed" type="Label" parent="Screen/GameScreen"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = -92.0
+margin_right = 4428.0
+margin_bottom = -5.0
+custom_fonts/font = SubResource( 10 )
+text = "90km/h"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndScreen" type="Control" parent="Screen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="Screen/EndScreen"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -29.5
+margin_bottom = 29.5
+custom_fonts/font = SubResource( 9 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
