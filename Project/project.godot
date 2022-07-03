@@ -19,12 +19,17 @@ _global_script_classes=[ {
 "language": "NativeScript",
 "path": "res://GoalArea.gdns"
 }, {
+"base": "Area",
+"class": "ObstacleField",
+"language": "NativeScript",
+"path": "res://DecelerateArea.gdns"
+}, {
 "base": "Node",
 "class": "Rule",
 "language": "NativeScript",
 "path": "res://Main.gdns"
 }, {
-"base": "Control",
+"base": "",
 "class": "Screen",
 "language": "NativeScript",
 "path": "res://Screen.gdns"
@@ -32,6 +37,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "AccelerationField": "",
 "GoalField": "",
+"ObstacleField": "",
 "Rule": "",
 "Screen": ""
 }
