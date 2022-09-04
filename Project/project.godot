@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Area",
 "class": "ObstacleField",
 "language": "NativeScript",
-"path": "res://DecelerateArea.gdns"
+"path": "res://ObstacleArea.gdns"
 }, {
 "base": "Node",
 "class": "Rule",

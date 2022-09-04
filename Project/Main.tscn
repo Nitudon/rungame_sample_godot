@@ -1,38 +1,33 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player.gdns" type="Script" id=1]
 [ext_resource path="res://Main.gdns" type="Script" id=2]
 [ext_resource path="res://GoalArea.gdns" type="Script" id=3]
-[ext_resource path="res://AcclerationArea.gdns" type="Script" id=4]
+[ext_resource path="res://AcclerationArea.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Car.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Fonts/Rota-Medium.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://Tree.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ObstacleArea.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/road/road.obj" type="ArrayMesh" id=9]
-
-[sub_resource type="BoxShape" id=1]
 
 [sub_resource type="BoxShape" id=2]
 
 [sub_resource type="BoxShape" id=3]
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="BoxShape" id=1]
 
-[sub_resource type="SpatialMaterial" id=5]
-flags_transparent = true
-albedo_color = Color( 0.796078, 1, 0.823529, 0.513726 )
+[sub_resource type="BoxShape" id=4]
 
-[sub_resource type="BoxShape" id=6]
-
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=5]
 font_path = "res://Fonts/Rota-Medium.otf"
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=6]
 size = 60
 outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
-font_data = SubResource( 7 )
+font_data = SubResource( 5 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=7]
 size = 90
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -43,117 +38,237 @@ script = ExtResource( 2 )
 
 [node name="World" type="Spatial" parent="."]
 
-[node name="Tree" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -240 )
-
-[node name="Tree2" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -230 )
-
-[node name="Tree3" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -220 )
-
-[node name="Tree4" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -210 )
-
-[node name="Tree5" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -200 )
-
-[node name="Tree6" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -190 )
-
-[node name="Tree7" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -180 )
-
-[node name="Tree8" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -170 )
-
-[node name="Tree9" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -160 )
-
-[node name="Tree10" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -150 )
-
-[node name="Tree11" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -140 )
-
-[node name="Tree12" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -130 )
-
-[node name="Tree13" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -120 )
-
-[node name="Tree14" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -110 )
-
-[node name="Tree15" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -100 )
-
-[node name="Tree16" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -90 )
-
-[node name="Tree17" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -80 )
-
-[node name="Tree18" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -70 )
-
-[node name="Tree19" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -60 )
-
-[node name="Tree20" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -50 )
-
-[node name="Tree21" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -40 )
-
-[node name="Tree22" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -30 )
-
 [node name="DirectionalLight" type="DirectionalLight" parent="World"]
 transform = Transform( 1, 0, 0, 0, 0.486991, 0.873407, 0, -0.873407, 0.486991, 0, 4.205, 0 )
 
-[node name="Ground" type="StaticBody" parent="World"]
+[node name="Stage" type="Spatial" parent="World"]
+
+[node name="Tree23" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -240 )
+
+[node name="Tree24" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -230 )
+
+[node name="Tree25" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -220 )
+
+[node name="Tree26" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -210 )
+
+[node name="Tree27" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -200 )
+
+[node name="Tree28" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -190 )
+
+[node name="Tree29" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -180 )
+
+[node name="Tree30" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -170 )
+
+[node name="Tree31" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -160 )
+
+[node name="Tree32" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -150 )
+
+[node name="Tree33" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -140 )
+
+[node name="Tree34" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -130 )
+
+[node name="Tree35" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -120 )
+
+[node name="Tree36" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -110 )
+
+[node name="Tree37" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -100 )
+
+[node name="Tree38" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -90 )
+
+[node name="Tree39" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -80 )
+
+[node name="Tree40" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -70 )
+
+[node name="Tree41" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -60 )
+
+[node name="Tree42" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -50 )
+
+[node name="Tree43" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -40 )
+
+[node name="Tree44" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -30 )
+
+[node name="Tree" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -240 )
+
+[node name="Tree2" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -230 )
+
+[node name="Tree3" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -220 )
+
+[node name="Tree4" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -210 )
+
+[node name="Tree5" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -200 )
+
+[node name="Tree6" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -190 )
+
+[node name="Tree7" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -180 )
+
+[node name="Tree8" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -170 )
+
+[node name="Tree9" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -160 )
+
+[node name="Tree10" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -150 )
+
+[node name="Tree11" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -140 )
+
+[node name="Tree12" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -130 )
+
+[node name="Tree13" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -120 )
+
+[node name="Tree14" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -110 )
+
+[node name="Tree15" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -100 )
+
+[node name="Tree16" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -90 )
+
+[node name="Tree17" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -80 )
+
+[node name="Tree18" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -70 )
+
+[node name="Tree19" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -60 )
+
+[node name="Tree20" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -50 )
+
+[node name="Tree21" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -40 )
+
+[node name="Tree22" parent="World/Stage" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -30 )
+
+[node name="Ground" type="StaticBody" parent="World/Stage"]
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Ground"]
+[node name="CollisionShape" type="CollisionShape" parent="World/Stage/Ground"]
 transform = Transform( 0.5, 0, 0, 0, 0.1, 0, 0, 0, 6, 0.5, -0.1, -6.634 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="MeshInstance" type="MeshInstance" parent="World/Ground"]
+[node name="MeshInstance" type="MeshInstance" parent="World/Stage/Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1, 0 )
 mesh = ExtResource( 9 )
 material/0 = null
 
-[node name="Wall" type="StaticBody" parent="World"]
+[node name="Wall" type="StaticBody" parent="World/Stage"]
 transform = Transform( 0.1, 0, 0, 0, 12, 8.15378e-05, 0, -1.81195e-06, 540, 18, 1, -130 )
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Wall"]
-shape = SubResource( 2 )
+[node name="CollisionShape" type="CollisionShape" parent="World/Stage/Wall"]
+shape = SubResource( 3 )
 
-[node name="Wall2" type="StaticBody" parent="World"]
+[node name="Wall2" type="StaticBody" parent="World/Stage"]
 transform = Transform( 0.1, 0, 0, 0, 12, 8.15378e-05, 0, -1.81195e-06, 540, 2, 1, -130 )
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Wall2"]
-shape = SubResource( 2 )
+[node name="CollisionShape" type="CollisionShape" parent="World/Stage/Wall2"]
+shape = SubResource( 3 )
 
 [node name="GoalArea" type="Area" parent="World"]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 3, 10, 1, -3 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="World/GoalArea"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
-[node name="AcclerationArea" type="Area" parent="World"]
-transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 0.4, -0.983783, 0, 7.38448 )
-script = ExtResource( 4 )
+[node name="Acceleration" type="Spatial" parent="World"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/AcclerationArea"]
-shape = SubResource( 3 )
+[node name="AcclerationArea" parent="World/Acceleration" instance=ExtResource( 4 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 5, 0.2, -90.694 )
+acceleration = 30.0
 
-[node name="MeshInstance" type="MeshInstance" parent="World/AcclerationArea"]
-transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
+[node name="AcclerationArea2" parent="World/Acceleration" instance=ExtResource( 4 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 12, 0.2, -90.694 )
+acceleration = 30.0
+
+[node name="AcclerationArea3" parent="World/Acceleration" instance=ExtResource( 4 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 8, 0.2, -62.421 )
+acceleration = 30.0
+
+[node name="AcclerationArea4" parent="World/Acceleration" instance=ExtResource( 4 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 15, 0.2, -164.251 )
+acceleration = 30.0
+
+[node name="AcclerationArea5" parent="World/Acceleration" instance=ExtResource( 4 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 2.5, 0.2, -192.941 )
+acceleration = 30.0
+
+[node name="AcclerationArea6" parent="World/Acceleration" instance=ExtResource( 4 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 15, 0.2, -192.941 )
+acceleration = 30.0
+
+[node name="AcclerationArea7" parent="World/Acceleration" instance=ExtResource( 4 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 9, 0.2, -231.845 )
+acceleration = 30.0
+
+[node name="Obstacle" type="Spatial" parent="World"]
+
+[node name="ObstacleArea" parent="World/Obstacle" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.94558, 0, -27.155 )
+deceleration = 25.0
+
+[node name="ObstacleArea2" parent="World/Obstacle" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4, 0, -92.2543 )
+deceleration = 25.0
+
+[node name="ObstacleArea3" parent="World/Obstacle" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1016, 0, -47.9571 )
+deceleration = 25.0
+
+[node name="ObstacleArea4" parent="World/Obstacle" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40537, 0, -157.349 )
+deceleration = 25.0
+
+[node name="ObstacleArea5" parent="World/Obstacle" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4, 0, -192.823 )
+deceleration = 25.0
+
+[node name="ObstacleArea6" parent="World/Obstacle" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.44394, 0, -224.929 )
+deceleration = 25.0
+
+[node name="ObstacleArea7" parent="World/Obstacle" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6322, 0, -142.194 )
+deceleration = 25.0
+
+[node name="ObstacleArea8" parent="World/Obstacle" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5311, 0, -27.155 )
+deceleration = 25.0
 
 [node name="Player" type="RigidBody" parent="World"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4, 6.5, -248 )
@@ -164,8 +279,8 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource( 1 )
 max_forward_speed = 30.0
-move_horizontal_speed = 10.0
-move_acceleration = 6.0
+move_horizontal_speed = 18.0
+move_acceleration = 8.0
 
 [node name="Camera" type="Camera" parent="World/Player"]
 transform = Transform( -1, -2.26267e-08, 8.44439e-08, 0, 0.965926, 0.258819, -8.74228e-08, 0.258819, -0.965926, 0.5, -0.463, -8 )
@@ -174,76 +289,10 @@ far = 400.0
 
 [node name="CollisionShape" type="CollisionShape" parent="World/Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.5, 0.6, -5.288, -0.6 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Car" parent="World/Player" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.5, 0 )
-
-[node name="Tree23" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -240 )
-
-[node name="Tree24" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -230 )
-
-[node name="Tree25" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -220 )
-
-[node name="Tree26" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -210 )
-
-[node name="Tree27" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -200 )
-
-[node name="Tree28" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -190 )
-
-[node name="Tree29" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -180 )
-
-[node name="Tree30" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -170 )
-
-[node name="Tree31" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -160 )
-
-[node name="Tree32" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -150 )
-
-[node name="Tree33" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -140 )
-
-[node name="Tree34" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -130 )
-
-[node name="Tree35" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -120 )
-
-[node name="Tree36" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -110 )
-
-[node name="Tree37" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -100 )
-
-[node name="Tree38" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -90 )
-
-[node name="Tree39" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -80 )
-
-[node name="Tree40" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -70 )
-
-[node name="Tree41" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -60 )
-
-[node name="Tree42" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -50 )
-
-[node name="Tree43" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -40 )
-
-[node name="Tree44" parent="World" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -30 )
 
 [node name="StartTimer" type="Timer" parent="."]
 one_shot = true
@@ -268,7 +317,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -29.5
 margin_bottom = 29.5
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 text = "0"
 align = 1
 __meta__ = {
@@ -288,7 +337,7 @@ margin_left = 32.0
 margin_top = 32.0
 margin_right = 332.0
 margin_bottom = 92.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 text = "Time : 0"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -301,7 +350,7 @@ margin_left = 32.0
 margin_top = -92.0
 margin_right = 4428.0
 margin_bottom = -5.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 7 )
 text = "90km/h"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -320,7 +369,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -29.5
 margin_bottom = 29.5
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
