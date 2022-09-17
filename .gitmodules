@@ -1,0 +1,6 @@
+[submodule "Rust/rungame_sample_rust"]
+	path = Rust/rungame_sample_rust
+	url = git@github.com:Nitudon/rungame_sample_rust.git
+[submodule "rust/rungame_sample_rust"]
+	path = rust/rungame_sample_rust
+	url = git@github.com:Nitudon/rungame_sample_rust.git
