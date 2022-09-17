@@ -3,9 +3,9 @@
 [ext_resource path="res://Assets/car/car.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Assets/car/car.png" type="Texture" id=2]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_texture = ExtResource( 2 )
 
 [node name="Car" type="MeshInstance"]
 mesh = ExtResource( 1 )
-material/0 = SubResource( 1 )
+material/0 = SubResource( 5 )

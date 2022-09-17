@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Player.gdns" type="Script" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gdns" type="Script" id=2]
 [ext_resource path="res://GoalArea.gdns" type="Script" id=3]
 [ext_resource path="res://AcclerationArea.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Car.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Fonts/Rota-Medium.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://Tree.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ObstacleArea.tscn" type="PackedScene" id=8]
@@ -15,8 +14,6 @@
 [sub_resource type="BoxShape" id=2]
 
 [sub_resource type="BoxShape" id=3]
-
-[sub_resource type="BoxShape" id=4]
 
 [sub_resource type="DynamicFontData" id=5]
 font_path = "res://Fonts/Rota-Medium.otf"
@@ -270,29 +267,7 @@ deceleration = 25.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5311, 0, -27.155 )
 deceleration = 25.0
 
-[node name="Player" type="RigidBody" parent="World"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4, 6.5, -248 )
-mass = 0.204082
-axis_lock_linear_y = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-script = ExtResource( 1 )
-max_forward_speed = 30.0
-move_horizontal_speed = 18.0
-move_acceleration = 8.0
-
-[node name="Camera" type="Camera" parent="World/Player"]
-transform = Transform( -1, -2.26267e-08, 8.44439e-08, 0, 0.965926, 0.258819, -8.74228e-08, 0.258819, -0.965926, 0.5, -0.463, -8 )
-current = true
-far = 400.0
-
-[node name="CollisionShape" type="CollisionShape" parent="World/Player"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.5, 0.6, -5.288, -0.6 )
-shape = SubResource( 4 )
-
-[node name="Car" parent="World/Player" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.5, 0 )
+[node name="Player" parent="World" instance=ExtResource( 1 )]
 
 [node name="StartTimer" type="Timer" parent="."]
 one_shot = true
