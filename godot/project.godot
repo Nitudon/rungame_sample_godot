@@ -9,22 +9,22 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Area",
+"base": "",
 "class": "AccelerationField",
 "language": "NativeScript",
 "path": "res://AcclerationArea.gdns"
 }, {
-"base": "Area",
+"base": "",
 "class": "GoalField",
 "language": "NativeScript",
 "path": "res://GoalArea.gdns"
 }, {
-"base": "Area",
+"base": "",
 "class": "ObstacleField",
 "language": "NativeScript",
 "path": "res://ObstacleArea.gdns"
 }, {
-"base": "Node",
+"base": "",
 "class": "Rule",
 "language": "NativeScript",
 "path": "res://Main.gdns"
